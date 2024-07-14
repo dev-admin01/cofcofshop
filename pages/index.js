@@ -10,7 +10,7 @@ function Home() {
         <title>Em Construção</title>
       </Head>
       <main className={styles.main}>
-        <Image src={logo} alt="Logo da Smoke Shop" className={styles.logo} /> */}
+        <Image src={logo} alt="Logo da Smoke Shop" className={styles.logo} />
         <h1>Em breve a maior smoke shop do Brasil!!</h1>
       </main>
     </div>
