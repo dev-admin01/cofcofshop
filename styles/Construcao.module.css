@@ -1,0 +1,19 @@
+/* styles/Construcao.module.css */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main {
+    text-align: center;
+  }
+
+  .logo {
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+  }
