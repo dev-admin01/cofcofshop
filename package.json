@@ -7,7 +7,9 @@
     "start": "next dev",
     "services:up": "docker compose -f infra/compose.yaml up -d",
     "services:stop": "docker compose -f infra/compose.yaml stop",
-    "services:down": "docker compose -f infra/compose.yaml down"
+    "services:down": "docker compose -f infra/compose.yaml down",
+    "migration:create": "node-pg-migrate -m infra/migration create",
+    "migration:up": "node-pg-migrate -m infra/migration --envPath .env.development up"
   },
   "author": "",
   "license": "MIT",
