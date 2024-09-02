@@ -1,15 +1,15 @@
 import database from "../../../../infra/database";
 
-async function status(request, response) {
-  const updatedAt = new Date().toDateString();
+export default async function status(request, response) {
+  const updatedAt = new Date().toISOString();
 
   const databaseVersionResult = await database.query("SHOW server_version;");
   const databaseVersionValue = databaseVersionResult.rows[0].server_version;
 
   const databaseMaxConnectionsResult = await database.query(
-    "SHOW max_connections"
+    "SHOW max_connections",
   );
-  const dataBaseMaxConnectionsValue =
+  const databaseMaxConnectionsValue =
     databaseMaxConnectionsResult.rows[0].max_connections;
 
   const databaseName = process.env.POSTGRES_DB;
@@ -23,15 +23,13 @@ async function status(request, response) {
     databaseOpenedConnectionResult.rows[0].count;
 
   response.status(200).json({
-    update_at: updatedAt,
+    updated_at: updatedAt,
     dependencies: {
       database: {
         version: databaseVersionValue,
-        max_connections: parseInt(dataBaseMaxConnectionsValue),
-        opened_connections: databaseOpenedConnectionValue,
+        max_connections: parseInt(databaseMaxConnectionsValue),
+        opnened_connections: databaseOpenedConnectionValue,
       },
     },
   });
 }
-
-export default status;
