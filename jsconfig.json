@@ -1,0 +1,5 @@
+{
+  "compilerOptions": {
+    "baseUrl": "." //indica que a pasta raiz(pasta que se encontra o jsconfig será a pasta base)
+  }
+}
